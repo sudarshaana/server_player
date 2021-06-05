@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VideoPlayerActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+        <com.google.android.exoplayer2.ui.SubtitleView
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:keepScreenOn="true"
+            app:auto_show="true"
+            app:fastforward_increment="10000"
+            app:resize_mode="fit"
+            app:rewind_increment="10000"
+            app:show_timeout="5000"
+            app:controller_layout_id="@layout/exo_player_control_view"
+            app:surface_type="surface_view"
+            app:use_controller="true" />
+
+        <TextView
+            android:id="@+id/trackName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="5dp"
+            android:text="@string/app_name"
+            android:textColor="@color/md_grey_500" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+
+    </FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
